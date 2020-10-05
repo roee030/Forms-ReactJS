@@ -1,0 +1,13 @@
+.header {
+  font-size: 3.5rem;
+  display: flex;
+  justify-content: space-around;
+  margin: 0px 0;
+  padding: 20px;
+  background-color: black;
+}
+.header > * {
+  color: aliceblue;
+  text-decoration: none;
+  cursor: pointer;
+}

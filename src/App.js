@@ -10,12 +10,10 @@ export default class App extends Component {
     return (
       <div className="App">
         <BrowserRouter>
-          <div>
-            <Header />
-            <Route path="/" exact component={Home}></Route>
-            <Route path="/createsurvey" exact component={CreateSurvey}></Route>
-            <Route path="/survey/:id" component={Survey}></Route>
-          </div>
+          <Header />
+          <Route path="/" exact component={Home}></Route>
+          <Route path="/createsurvey" exact component={CreateSurvey}></Route>
+          <Route path="/survey/:id" component={Survey}></Route>
         </BrowserRouter>
       </div>
     );

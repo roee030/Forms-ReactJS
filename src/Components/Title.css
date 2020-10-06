@@ -1,0 +1,11 @@
+.title-warpper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title-warpper-form {
+  width: 40vw;
+  border: 1px solid black;
+  margin-top: 10px;
+  padding: 10px;
+}

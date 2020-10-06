@@ -1,0 +1,10 @@
+.add-question {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.add-question > * {
+  border: 1px solid black;
+  margin-top: 10px;
+  padding: 10px;
+}

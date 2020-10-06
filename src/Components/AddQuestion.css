@@ -1,10 +1,20 @@
-.add-question {
+.add-question-wraper {
+  display: flex;
   justify-content: center;
   align-items: center;
-  display: flex;
+  flex-direction: column-reverse;
 }
-.add-question > * {
-  border: 1px solid black;
+.add-question-form {
   margin-top: 10px;
+
   padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
+  border: 1px solid black;
+  width: 40vw;
+}
+.plus-btn {
+  margin-top: 5px;
 }

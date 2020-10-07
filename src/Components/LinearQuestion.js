@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { MDBInput, MDBIcon } from "mdbreact";
 import "./LinearQuestion.css";
 export default function LinearQuestion() {

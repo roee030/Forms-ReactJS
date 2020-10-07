@@ -5,9 +5,23 @@ import AddQestion from "./AddQuestion";
 import LinearQuestion from "./LinearQuestion";
 import RadioQuestion from "./RadioQuestion";
 import SaveSurvey from "./SaveSurvey";
+// var shortid = require("shortid");
+// shortid.generate()
 export default function CreateSurvey() {
-  const [formQuestionsArray, setFormQuestionsArray] = useState([]);
+  const [formQuestionsArray, setFormQuestionsArray] = useState({
+    title: "",
+    subtitle: "",
+    OpenQuestions: [],
+    LinearQuestions: [],
+    RadioQuestions: [],
+  });
   const [formQuestionsDisplay, setFormQuestionsDisplay] = useState([]);
+  const addTitleToObject = (obj) => {
+    formQuestionsArray.title = obj.title;
+    formQuestionsArray.subtitle = obj.subtitle;
+    console.log(formQuestionsArray);
+  };
+  //   const addOpenQuestion
   const addQuestionToForm = (value) => {
     switch (value) {
       case "1":
@@ -31,23 +45,23 @@ export default function CreateSurvey() {
         break;
     }
   };
-  const displayForm = formQuestionsDisplay.map((element) => {
+  const displayForm = formQuestionsDisplay.map((element, index) => {
     switch (element) {
       case "OpenQuestion":
-        return <OpenQuestion />;
+        return <OpenQuestion key={index} />;
         break;
       case "LinearQuestion":
-        return <LinearQuestion />;
+        return <LinearQuestion key={index} />;
 
         break;
       case "RadioQuestion":
-        return <RadioQuestion />;
+        return <RadioQuestion key={index} />;
         break;
     }
   });
   return (
     <div>
-      <Title />
+      <Title addTitleToObject={addTitleToObject} />
       {displayForm}
       <AddQestion addQuestionToForm={addQuestionToForm} />
       <SaveSurvey />

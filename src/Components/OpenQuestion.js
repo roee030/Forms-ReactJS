@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { MDBInput, MDBIcon } from "mdbreact";
 import "./OpenQuestion.css";
-export default function OpenQuestion() {
+export default function OpenQuestion({ addDataToMainArray }) {
   const [openQuestion, setOpenQuestion] = useState("");
+  addDataToMainArray({ openQuestion });
   return (
     <div className="open-question-wraper">
       <div className="open-question-form">

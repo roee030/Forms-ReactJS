@@ -3,6 +3,7 @@ import { MDBInput, MDBIcon } from "mdbreact";
 import "./OpenQuestion.css";
 export default function OpenQuestion({ index, AddQuestionToArray }) {
   const [openQuestion, setOpenQuestion] = useState("");
+  AddQuestionToArray({ type: "open", openQuestion }, index);
   //TODO: check why its get the question without the last character
   return (
     <div className="open-question-wraper">
@@ -11,7 +12,6 @@ export default function OpenQuestion({ index, AddQuestionToArray }) {
           label="Open question"
           onChange={(e) => {
             setOpenQuestion(e.target.value);
-            AddQuestionToArray({ type: "open", openQuestion }, index);
           }}
         />
         <MDBIcon far icon="trash-alt" />

@@ -72,13 +72,20 @@ export default function CreateSurvey() {
         return (
           <LinearQuestion
             key={index}
-            addLinearQuestionToSurveyObject={addLinearQuestionToSurveyObject}
+            index={index}
+            AddQuestionToArray={AddQuestionToArray}
           />
         );
 
         break;
       case "RadioQuestion":
-        return <RadioQuestion key={index} />;
+        return (
+          <RadioQuestion
+            key={index}
+            index={index}
+            AddQuestionToArray={AddQuestionToArray}
+          />
+        );
         break;
     }
   });

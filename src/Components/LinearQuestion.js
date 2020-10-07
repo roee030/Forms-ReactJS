@@ -1,10 +1,11 @@
 import React, { useState, useRef } from "react";
 import { MDBInput, MDBIcon } from "mdbreact";
 import "./LinearQuestion.css";
-export default function LinearQuestion() {
+export default function LinearQuestion({ addLinearQuestionToSurveyObject }) {
   const [linearQuestion, setLinearQuestion] = useState("");
   const [level1label, setLevel1label] = useState("");
   const [level5label, setLevel5label] = useState("");
+  const [finalObj, setFinalObject] = useState({});
   return (
     <div className="linear-question-wraper">
       <div className="linear-question-form">

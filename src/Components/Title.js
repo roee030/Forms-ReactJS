@@ -2,10 +2,10 @@ import React, { useState, useRef } from "react";
 import { MDBInput } from "mdbreact";
 import "./Title.css";
 
-export default function Title({ addTitleToObject }) {
+export default function Title({ addTitleToSurveyObject }) {
   const [title, setTitle] = useState("");
   const [subtitle, setSubtitle] = useState("");
-  addTitleToObject({ title, subtitle });
+  addTitleToSurveyObject({ title, subtitle });
   return (
     <div className="title-warpper">
       <form className="title-warpper-form">

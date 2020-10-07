@@ -11,17 +11,24 @@ export default function CreateSurvey() {
   const [formQuestionsArray, setFormQuestionsArray] = useState({
     title: "",
     subtitle: "",
-    OpenQuestions: [],
-    LinearQuestions: [],
-    RadioQuestions: [],
+    Questions: [],
   });
   const [formQuestionsDisplay, setFormQuestionsDisplay] = useState([]);
-  const addTitleToObject = (obj) => {
+  //get the title and subtitle and add to the survey object
+  const addTitleToSurveyObject = (obj) => {
     formQuestionsArray.title = obj.title;
     formQuestionsArray.subtitle = obj.subtitle;
     console.log(formQuestionsArray);
   };
-  //   const addOpenQuestion
+  //get the question ,level1label and level5label and add to the survey object inside the linear arr
+  const addLinearQuestionToSurveyObject = (obj) => {
+    formQuestionsArray.LinearQuestions.push({
+      question: obj.linearQuestion,
+      level1label: obj.level1label,
+      level5label: obj.level1label,
+    });
+  };
+
   const addQuestionToForm = (value) => {
     switch (value) {
       case "1":
@@ -45,13 +52,29 @@ export default function CreateSurvey() {
         break;
     }
   };
+  const AddQuestionToArray = (obj, index) => {
+    let tempArr = formQuestionsArray;
+    tempArr.Questions[index] = obj;
+    setFormQuestionsArray(tempArr);
+  };
   const displayForm = formQuestionsDisplay.map((element, index) => {
     switch (element) {
       case "OpenQuestion":
-        return <OpenQuestion key={index} />;
+        return (
+          <OpenQuestion
+            key={index}
+            index={index}
+            AddQuestionToArray={AddQuestionToArray}
+          />
+        );
         break;
       case "LinearQuestion":
-        return <LinearQuestion key={index} />;
+        return (
+          <LinearQuestion
+            key={index}
+            addLinearQuestionToSurveyObject={addLinearQuestionToSurveyObject}
+          />
+        );
 
         break;
       case "RadioQuestion":
@@ -59,9 +82,11 @@ export default function CreateSurvey() {
         break;
     }
   });
+
+  console.log(formQuestionsArray);
   return (
     <div>
-      <Title addTitleToObject={addTitleToObject} />
+      <Title addTitleToSurveyObject={addTitleToSurveyObject} />
       {displayForm}
       <AddQestion addQuestionToForm={addQuestionToForm} />
       <SaveSurvey />

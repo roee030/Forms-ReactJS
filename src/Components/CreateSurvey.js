@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Title from "./Title";
 import OpenQuestion from "./OpenQuestion";
 import AddQestion from "./AddQuestion";
@@ -13,6 +13,7 @@ export default function CreateSurvey() {
     subtitle: "",
     Questions: [],
   });
+
   const [formQuestionsDisplay, setFormQuestionsDisplay] = useState([]);
   //get the title and subtitle and add to the survey object
   const addTitleToSurveyObject = (obj) => {
@@ -96,7 +97,7 @@ export default function CreateSurvey() {
       <Title addTitleToSurveyObject={addTitleToSurveyObject} />
       {displayForm}
       <AddQestion addQuestionToForm={addQuestionToForm} />
-      <SaveSurvey />
+      <SaveSurvey formQuestionsArray={formQuestionsArray} />
     </div>
   );
 }

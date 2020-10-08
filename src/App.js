@@ -6,6 +6,10 @@ import Header from "./Components/Header";
 import CreateSurvey from "./Components/CreateSurvey";
 import Survey from "./Components/Survey";
 export default class App extends Component {
+  state = {
+    ArrayOfQuestionsAndAnswers: [],
+  };
+
   render() {
     return (
       <div className="App">

@@ -10,12 +10,18 @@ export default function SaveSurvey({ formQuestionsArray }) {
       <Link
         to="/"
         className="send-form"
-        onClick={() =>
+        onClick={() => {
+          // console.log(localStorage.getItem("ArrayOfQuestionsAndAnswers"));
+          let myAppArray = JSON.parse(
+            localStorage.getItem("ArrayOfQuestionsAndAnswers")
+          );
+
+          myAppArray.push(formQuestionsArray);
           localStorage.setItem(
-            "formQuestionsArray",
-            JSON.stringify(formQuestionsArray)
-          )
-        }
+            "ArrayOfQuestionsAndAnswers",
+            JSON.stringify(myAppArray)
+          );
+        }}
       >
         Submit
         <MDBIcon far icon="check-square" />

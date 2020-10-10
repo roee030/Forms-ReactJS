@@ -12,6 +12,7 @@ export default function CreateSurvey() {
     title: "",
     subtitle: "",
     Questions: [],
+    Answers: [],
   });
 
   const [formQuestionsDisplay, setFormQuestionsDisplay] = useState([]);

@@ -132,8 +132,25 @@ export default function DisplayFormSurvey(props) {
       );
     }
   });
-  const handleClick = (e) => {
-    e.preventDefault();
+  const handleClick = () => {
+    for (let index = 0; index < props.survey.Questions.length; index++) {
+      if (answerArray[index] == undefined) {
+        answerArray[index] = "empty";
+      }
+      if (props.survey.Answers[index] !== undefined) {
+        props.survey.Answers[index] = [
+          props.survey.Answers[index],
+          [answerArray[index]],
+        ];
+      }
+      if (props.survey.Answers[index] == undefined) {
+        props.survey.Answers[index] = [...[answerArray[index]]];
+      }
+
+      console.log(answerArray[index]);
+      //   answerArrayFromObj.push(answerArray[index]);
+      //   props.survey.Answers[index].push([answerArray[index]]);
+    }
   };
   console.log(answerArray);
   return (
@@ -142,7 +159,11 @@ export default function DisplayFormSurvey(props) {
         <h1>{props.survey.title}</h1>
         <h1>{props.survey.subtitle}</h1>
         {FormSurvey}
-        <button onClick={(e) => (e.preventDefault(), console.log(answerArray))}>
+        <button
+          onClick={(e) => (
+            e.preventDefault(), handleClick(), console.log(props.survey)
+          )}
+        >
           Submit
         </button>
       </form>

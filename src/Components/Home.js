@@ -20,8 +20,12 @@ export default function Home() {
 
   const surveyHomeDisplayCard = arrayOfQuestionsAndAnswers.map((element) => {
     return (
-      <div className="survey-wraper">
-        <Link to={`survey/${element.id}`} className="survey-card-wraper">
+      <div className="survey-wraper" key={element.id}>
+        <Link
+          to={`survey/${element.id}`}
+          key={element.id}
+          className="survey-card-wraper"
+        >
           {element.title}
         </Link>
       </div>

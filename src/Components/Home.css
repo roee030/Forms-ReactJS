@@ -1,0 +1,15 @@
+.survey-wraper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.survey-card-wraper {
+  background-color: brown;
+  padding: 15px;
+  border: none;
+  margin: 10px;
+}
+.survey-card-wraper:hover {
+  border: 1px black solid;
+}

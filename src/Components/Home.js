@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-
+import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
+import Survey from "./Survey";
+import "./Home.css";
 export default function Home() {
   const [arrayOfQuestionsAndAnswers, setArrayOfQuestionsAndAnswers] = useState(
     []
@@ -17,7 +19,13 @@ export default function Home() {
   }, []);
 
   const surveyHomeDisplayCard = arrayOfQuestionsAndAnswers.map((element) => {
-    return <div>{element.title}asd</div>;
+    return (
+      <div className="survey-wraper">
+        <Link to={`survey/${element.id}`} className="survey-card-wraper">
+          {element.title}
+        </Link>
+      </div>
+    );
   });
 
   return <div>{surveyHomeDisplayCard}</div>;

@@ -146,7 +146,19 @@ export default function DisplayFormSurvey(props) {
       if (props.survey.Answers[index] == undefined) {
         props.survey.Answers[index] = [...[answerArray[index]]];
       }
-
+      const tempArrayOfObjFromLocalStorage = JSON.parse(
+        localStorage.getItem("ArrayOfQuestionsAndAnswers")
+      );
+      let indexNeedToChange = -1;
+      tempArrayOfObjFromLocalStorage.forEach((element, index) => {
+        if (element.id == props.survey.id) indexNeedToChange = index;
+      });
+      console.log(indexNeedToChange);
+      tempArrayOfObjFromLocalStorage[indexNeedToChange] = props.survey;
+      localStorage.setItem(
+        "ArrayOfQuestionsAndAnswers",
+        JSON.stringify(tempArrayOfObjFromLocalStorage)
+      );
       console.log(answerArray[index]);
       //   answerArrayFromObj.push(answerArray[index]);
       //   props.survey.Answers[index].push([answerArray[index]]);

@@ -12,8 +12,13 @@ export default function Home() {
       );
     }
     setArrayOfQuestionsAndAnswers(
-      localStorage.getItem("ArrayOfQuestionsAndAnswers")
+      JSON.parse(localStorage.getItem("ArrayOfQuestionsAndAnswers"))
     );
+  }, []);
+
+  const surveyHomeDisplayCard = arrayOfQuestionsAndAnswers.map((element) => {
+    return <div>{element.title}asd</div>;
   });
-  return <div>Home</div>;
+
+  return <div>{surveyHomeDisplayCard}</div>;
 }

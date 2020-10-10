@@ -11,11 +11,10 @@ export default function SaveSurvey({ formQuestionsArray }) {
         to="/"
         className="send-form"
         onClick={() => {
-          // console.log(localStorage.getItem("ArrayOfQuestionsAndAnswers"));
           let myAppArray = JSON.parse(
             localStorage.getItem("ArrayOfQuestionsAndAnswers")
           );
-
+          formQuestionsArray.id = shortid.generate();
           myAppArray.push(formQuestionsArray);
           localStorage.setItem(
             "ArrayOfQuestionsAndAnswers",

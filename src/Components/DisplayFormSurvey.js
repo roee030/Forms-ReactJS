@@ -173,6 +173,7 @@ export default function DisplayFormSurvey(props) {
         <h1>{props.survey.subtitle}</h1>
         {FormSurvey}
         <button
+          className="myButton"
           onClick={(e) => (
             e.preventDefault(), handleClick(), console.log(props.survey)
           )}

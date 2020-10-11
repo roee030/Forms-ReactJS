@@ -1,12 +1,20 @@
 .survey-wraper {
   display: flex;
   justify-content: center;
+
   align-items: center;
   flex-wrap: wrap;
 }
+.wraper {
+  display: flex;
+}
 .survey-card-wraper {
-  background-color: brown;
-  padding: 15px;
+  border-radius: 20px;
+  background-color: rgb(0, 0, 0);
+  padding: 30px;
+  display: inline;
+  font-size: 20px;
+  text-align: center;
   border: none;
   margin: 10px;
 }

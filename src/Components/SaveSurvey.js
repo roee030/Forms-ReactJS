@@ -9,7 +9,7 @@ export default function SaveSurvey({ formQuestionsArray }) {
     <div className="submit-form-wraper">
       <Link
         to="/"
-        className="send-form"
+        className="send-form myButton"
         onClick={() => {
           let myAppArray = JSON.parse(
             localStorage.getItem("ArrayOfQuestionsAndAnswers")
@@ -22,7 +22,7 @@ export default function SaveSurvey({ formQuestionsArray }) {
           );
         }}
       >
-        Submit
+        Submit&nbsp;
         <MDBIcon far icon="check-square" />
       </Link>
     </div>

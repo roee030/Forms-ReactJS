@@ -32,5 +32,5 @@ export default function Home() {
     );
   });
 
-  return <div>{surveyHomeDisplayCard}</div>;
+  return <div className="wraper">{surveyHomeDisplayCard}</div>;
 }

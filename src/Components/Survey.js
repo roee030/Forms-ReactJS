@@ -18,8 +18,12 @@ export default function Survey(props) {
   return (
     <div>
       <div className="toggle">
-        <button onClick={() => setToggle(!toggle)}>Survey</button>
-        <button onClick={() => setToggle(!toggle)}>Answer</button>
+        <button className="myButton" onClick={() => setToggle(true)}>
+          Answer
+        </button>
+        <button className="myButton" onClick={() => setToggle(false)}>
+          Survey
+        </button>
       </div>
       {Survey && toggle ? <DisplaySurveyAnswer survey={Survey} /> : ""}
       {Survey && !toggle ? <DisplayFormSurvey survey={Survey} /> : ""}

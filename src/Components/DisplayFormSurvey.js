@@ -163,6 +163,7 @@ export default function DisplayFormSurvey(props) {
       //   answerArrayFromObj.push(answerArray[index]);
       //   props.survey.Answers[index].push([answerArray[index]]);
     }
+    window.location.reload();
   };
   console.log(answerArray);
   return (

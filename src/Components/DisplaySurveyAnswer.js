@@ -24,15 +24,23 @@ export default function DisplaySurveyAnswer({ survey }) {
         },
       ],
     };
-    return survey.Answers[index].map((element) => {
-      dataset[element - 1]++;
-    });
+    try {
+      return survey.Answers[index].map((element) => {
+        dataset[element - 1]++;
+      });
+    } catch (e) {
+      return;
+    }
   };
   const getAllOpenAnswerByIndex = (index) => {
-    return survey.Answers[index].map((element) => {
-      console.log(element);
-      return <div>{element}</div>;
-    });
+    try {
+      return survey.Answers[index].map((element) => {
+        console.log(element);
+        return <div>{element}</div>;
+      });
+    } catch (e) {
+      return;
+    }
   };
   const getAllRadioAnswerByIndex = (index) => {};
   const displayCharts = survey.Questions.map((element, index) => {
@@ -46,9 +54,12 @@ export default function DisplaySurveyAnswer({ survey }) {
     }
     if (element.type == "linear") {
       return (
-        <div className="linearQuestionAndAnswerWarper chart">
+        <div className="linearQuestionAndAnswerWarperr chart">
           {getAllLinearAnswerByIndex(index)}
-          <Bar data={Data}></Bar>
+          <Bar
+            className="linearQuestionAndAnswerWarper chart"
+            data={Data}
+          ></Bar>
           {/* <Bar data={Data}></Bar> */}
         </div>
       );
@@ -62,5 +73,5 @@ export default function DisplaySurveyAnswer({ survey }) {
       );
     }
   });
-  return <div>{displayCharts}</div>;
+  return <div className="Warper">{displayCharts}</div>;
 }

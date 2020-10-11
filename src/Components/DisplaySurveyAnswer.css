@@ -7,3 +7,6 @@
 .questionWarper {
   font-size: 2rem;
 }
+.linearQuestionAndAnswerWarper {
+  width: 100% !important;
+}

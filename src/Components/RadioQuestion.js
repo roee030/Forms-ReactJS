@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { MDBContainer, MDBIcon, MDBInput } from "mdbreact";
 import "./RadioQuestion.css";
+var shortid = require("shortid");
+// shortid.generate()
 export default function RadioQuestion({ AddQuestionToArray, index }) {
   const [radioQuestion, setRadiorQuestion] = useState("");
   const [option1, setOption1] = useState("");
@@ -8,7 +10,15 @@ export default function RadioQuestion({ AddQuestionToArray, index }) {
   const [option3, setOption3] = useState("");
   const [option4, setOption4] = useState("");
   AddQuestionToArray(
-    { type: "radio", radioQuestion, option1, option2, option3, option4 },
+    {
+      type: "radio",
+      radioQuestion,
+      option1,
+      option2,
+      option3,
+      option4,
+      id: shortid.generate(),
+    },
     index
   );
 

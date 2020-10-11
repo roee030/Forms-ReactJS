@@ -13,5 +13,10 @@ export default function Survey(props) {
     setSurvey(mySurvey[0]);
   }, []);
 
-  return <div>{Survey ? <DisplayFormSurvey survey={Survey} /> : ""}</div>;
+  return (
+    <div>
+      {Survey ? <DisplaySurveyAnswer survey={Survey} /> : ""}
+      {Survey ? <DisplayFormSurvey survey={Survey} /> : ""}
+    </div>
+  );
 }

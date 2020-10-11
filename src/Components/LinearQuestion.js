@@ -1,12 +1,20 @@
 import React, { useState, useRef } from "react";
 import { MDBInput, MDBIcon } from "mdbreact";
 import "./LinearQuestion.css";
+var shortid = require("shortid");
+// shortid.generate()
 export default function LinearQuestion({ AddQuestionToArray, index }) {
   const [linearQuestion, setLinearQuestion] = useState("");
   const [level1label, setLevel1label] = useState("");
   const [level5label, setLevel5label] = useState("");
   AddQuestionToArray(
-    { type: "linear", linearQuestion, level1label, level5label },
+    {
+      type: "linear",
+      linearQuestion,
+      level1label,
+      level5label,
+      id: shortid.generate(),
+    },
     index
   );
   return (

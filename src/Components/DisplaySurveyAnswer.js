@@ -59,6 +59,8 @@ export default function DisplaySurveyAnswer({ survey }) {
           <Bar
             className="linearQuestionAndAnswerWarper chart"
             data={Data}
+            options={{responsive:true}}
+          
           ></Bar>
           {/* <Bar data={Data}></Bar> */}
         </div>

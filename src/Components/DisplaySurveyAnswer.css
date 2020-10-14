@@ -8,5 +8,12 @@
   font-size: 2rem;
 }
 .linearQuestionAndAnswerWarper {
-  width: 100% !important;
+}
+
+@media screen and (min-width: 600px) {
+  canvas {
+    height: 50vh !important;
+    width: 50vw !important;
+    transform: translate(49%, 0);
+  }
 }

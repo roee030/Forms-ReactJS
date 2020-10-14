@@ -55,11 +55,10 @@ export default function CreateSurvey() {
     }
   };
   const AddQuestionToArray = (obj, index) => {
-    // let tempArr = formQuestionsArray;
-    // tempArr.Questions[index] = obj;
-    // setFormQuestionsArray(tempArr);
+    let tempArr = formQuestionsArray;
+    tempArr.Questions[index] = obj;
+    setFormQuestionsArray(tempArr);
   };
-
   const displayForm = formQuestionsDisplay.map((element, index) => {
     switch (element) {
       case "OpenQuestion":

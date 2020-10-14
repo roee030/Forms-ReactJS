@@ -3,12 +3,7 @@ import { MDBInput, MDBIcon } from "mdbreact";
 import "./LinearQuestion.css";
 var shortid = require("shortid");
 // shortid.generate()
-export default function LinearQuestion({
-  AddQuestionToArray,
-
-  index,
-}) {
-  const id = shortid.generate();
+export default function LinearQuestion({ AddQuestionToArray, index }) {
   const [linearQuestion, setLinearQuestion] = useState("");
   const [level1label, setLevel1label] = useState("");
   const [level5label, setLevel5label] = useState("");
@@ -18,11 +13,10 @@ export default function LinearQuestion({
       linearQuestion,
       level1label,
       level5label,
-      id,
+      id: shortid.generate(),
     },
     index
   );
-
   return (
     <div className="linear-question-wraper">
       <div className="linear-question-form">
